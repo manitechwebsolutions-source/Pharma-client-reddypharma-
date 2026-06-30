@@ -17,7 +17,10 @@ export function FloatingWhatsApp() {
       style={{ backgroundColor: "oklch(0.65 0.17 145)" }}
       aria-label="Chat on WhatsApp"
     >
-      <span className="absolute inset-0 rounded-full animate-ping opacity-30" style={{ backgroundColor: "oklch(0.65 0.17 145)" }} />
+      <span
+        className="absolute inset-0 rounded-full animate-ping opacity-30"
+        style={{ backgroundColor: "oklch(0.65 0.17 145)" }}
+      />
       <MessageCircle className="h-6 w-6 relative" />
     </motion.a>
   );

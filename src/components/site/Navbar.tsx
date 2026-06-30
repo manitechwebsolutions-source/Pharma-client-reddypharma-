@@ -1,21 +1,24 @@
-import { Link } from "@tanstack/react-router";
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SITE, waLink } from "@/lib/site";
-import logoAsset from "@/assets/reddypharmalogo.png";
 
 const links = [
-  { to: "/", label: "Home" },
-  { to: "/products", label: "Products" },
-  { to: "/services", label: "Services" },
-  { to: "/request", label: "Request Medicine" },
-  { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/products", label: "Products" },
+  { href: "/services", label: "Services" },
+  { href: "/request", label: "Request Medicine" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ] as const;
 
 export function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -41,9 +44,9 @@ export function Navbar() {
             scrolled ? "glass shadow-soft" : "bg-transparent"
           }`}
         >
-          <Link to="/" className="flex min-w-0 items-center gap-2 font-bold text-base sm:text-lg">
+          <Link href="/" className="flex min-w-0 items-center gap-2 font-bold text-base sm:text-lg">
             <img
-              src={logoAsset}
+              src="/assets/reddypharmalogo.png"
               alt="Reddy Pharma"
               className="h-10 w-auto shrink-0 rounded-xl object-contain sm:h-12 md:h-14"
             />
@@ -51,22 +54,35 @@ export function Navbar() {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
-            {links.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                className="px-4 py-2 text-sm font-medium text-foreground/70 hover:text-foreground rounded-full transition-colors hover:bg-secondary"
-                activeProps={{ className: "text-primary bg-secondary" }}
-                activeOptions={{ exact: l.to === "/" }}
-              >
-                {l.label}
-              </Link>
-            ))}
+            {links.map((l) => {
+              const isActive = pathname === l.href;
+              return (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className={`px-4 py-2 text-sm font-medium rounded-full transition-colors ${
+                    isActive
+                      ? "text-primary bg-secondary"
+                      : "text-foreground/70 hover:text-foreground hover:bg-secondary"
+                  }`}
+                >
+                  {l.label}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="hidden lg:flex items-center gap-2">
-            <Button asChild variant="default" className="rounded-full bg-gradient-to-r from-primary to-primary-glow shadow-soft hover:shadow-glow transition-shadow">
-              <a href={waLink("Hi! I'd like to enquire about a medicine.")} target="_blank" rel="noopener noreferrer">
+            <Button
+              asChild
+              variant="default"
+              className="rounded-full bg-gradient-to-r from-primary to-primary-glow shadow-soft hover:shadow-glow transition-shadow"
+            >
+              <a
+                href={waLink("Hi! I'd like to enquire about a medicine.")}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 WhatsApp Us
               </a>
             </Button>
@@ -91,26 +107,36 @@ export function Navbar() {
               className="lg:hidden mt-2 glass rounded-2xl p-3 shadow-soft"
             >
               <div className="flex flex-col">
-                {links.map((l, i) => (
-                  <motion.div
-                    key={l.to}
-                    initial={{ opacity: 0, x: -8 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.04 }}
-                  >
-                    <Link
-                      to={l.to}
-                      onClick={() => setOpen(false)}
-                      className="block px-4 py-3 rounded-xl text-sm font-medium hover:bg-secondary"
-                      activeProps={{ className: "text-primary bg-secondary" }}
-                      activeOptions={{ exact: l.to === "/" }}
+                {links.map((l, i) => {
+                  const isActive = pathname === l.href;
+                  return (
+                    <motion.div
+                      key={l.href}
+                      initial={{ opacity: 0, x: -8 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.04 }}
                     >
-                      {l.label}
-                    </Link>
-                  </motion.div>
-                ))}
-                <Button asChild className="mt-2 rounded-xl bg-gradient-to-r from-primary to-primary-glow">
-                  <a href={waLink("Hi! I'd like to enquire about a medicine.")} target="_blank" rel="noopener noreferrer">
+                      <Link
+                        href={l.href}
+                        onClick={() => setOpen(false)}
+                        className={`block px-4 py-3 rounded-xl text-sm font-medium ${
+                          isActive ? "text-primary bg-secondary" : "hover:bg-secondary"
+                        }`}
+                      >
+                        {l.label}
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+                <Button
+                  asChild
+                  className="mt-2 rounded-xl bg-gradient-to-r from-primary to-primary-glow"
+                >
+                  <a
+                    href={waLink("Hi! I'd like to enquire about a medicine.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     WhatsApp Us
                   </a>
                 </Button>
