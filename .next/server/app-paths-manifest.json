@@ -1,6 +1,4 @@
 {
-  "/(routes)/request/page": "app/(routes)/request/page.js",
   "/(routes)/page": "app/(routes)/page.js",
-  "/(routes)/products/page": "app/(routes)/products/page.js",
-  "/(routes)/admin/page": "app/(routes)/admin/page.js"
+  "/(routes)/products/page": "app/(routes)/products/page.js"
 }

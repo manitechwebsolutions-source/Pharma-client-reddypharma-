@@ -303,7 +303,7 @@ module.exports = require("next/dist/server/app-render/dynamic-access-async-stora
 
 /***/ }),
 
-/***/ "./work-async-storage.external":
+/***/ "../app-render/work-async-storage.external":
 /*!*****************************************************************************!*\
   !*** external "next/dist/server/app-render/work-async-storage.external.js" ***!
   \*****************************************************************************/
@@ -409,7 +409,7 @@ module.exports = require("util");
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/@swc","vendor-chunks/motion-dom","vendor-chunks/framer-motion","vendor-chunks/tailwind-merge","vendor-chunks/@radix-ui","vendor-chunks/@tanstack","vendor-chunks/lucide-react","vendor-chunks/motion-utils","vendor-chunks/class-variance-authority","vendor-chunks/clsx"], () => (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2F(routes)%2Fproducts%2Fpage&page=%2F(routes)%2Fproducts%2Fpage&appPaths=%2F(routes)%2Fproducts%2Fpage&pagePath=private-next-app-dir%2F(routes)%2Fproducts%2Fpage.tsx&appDir=G%3A%5CReddy%20Pharmacy%20Elevate%5Csrc%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=G%3A%5CReddy%20Pharmacy%20Elevate&isDev=true&tsconfigPath=.%2Ftsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D&isGlobalNotFoundEnabled=!")));
+var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/motion-dom","vendor-chunks/framer-motion","vendor-chunks/tailwind-merge","vendor-chunks/@tanstack","vendor-chunks/lucide-react","vendor-chunks/motion-utils","vendor-chunks/@radix-ui","vendor-chunks/class-variance-authority","vendor-chunks/@swc","vendor-chunks/clsx"], () => (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2F(routes)%2Fproducts%2Fpage&page=%2F(routes)%2Fproducts%2Fpage&appPaths=%2F(routes)%2Fproducts%2Fpage&pagePath=private-next-app-dir%2F(routes)%2Fproducts%2Fpage.tsx&appDir=G%3A%5CReddy%20Pharmacy%20Elevate%5Csrc%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=G%3A%5CReddy%20Pharmacy%20Elevate&isDev=true&tsconfigPath=.%2Ftsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D&isGlobalNotFoundEnabled=!")));
 module.exports = __webpack_exports__;
 
 })();
