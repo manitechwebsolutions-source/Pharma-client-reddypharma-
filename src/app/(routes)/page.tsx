@@ -80,7 +80,7 @@ function Hero({ heroBg }: { heroBg: string }) {
     <section className="relative overflow-hidden min-h-[640px] md:min-h-[720px] flex items-center">
       <img
         src={heroBg}
-        alt="Pharmacy background"
+         alt="Reddy Pharma medical shop in Bengaluru"
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
       <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
